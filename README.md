@@ -4,5 +4,5 @@ A simple tool used to brute force a 4 digit pin on a web application. Can be mod
 # Scanner tool.
 Basic tool used to scan websites for any SQL injection or XSS exploits.
 
-# Reverse shel tool.
+# Reverse shell tool.
 Basic script to start a reverse shell on a system vulnerable to command injections via XSS.
