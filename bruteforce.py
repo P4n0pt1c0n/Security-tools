@@ -3,9 +3,9 @@ import requests
 import string
 
 # Send post requests to target URL.
-url = "http://python.thm/labs/lab1/index.php"
+url = ""
 
-username = "Mark"
+username = ""
 password_list = []
 
 # Generating 4-digit  alphanumeric pins.
@@ -27,3 +27,4 @@ def brute_force():
             print(f"[-] Attempted: {password}")
 
 brute_force()
+
